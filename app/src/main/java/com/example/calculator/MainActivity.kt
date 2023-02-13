@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         buttonsClick()
 
 
-
     }
 
     fun buttonsClick() = with(binding) {
@@ -80,12 +79,13 @@ class MainActivity : AppCompatActivity() {
             lastDot = false
         }
 
+
         buttonDot.setOnClickListener {
-            if (lastNumeric && !lastDot && textResult.text.isNotEmpty()) {
+            if (lastNumeric && !lastDot && textResult.text.isNotEmpty() && !doubleDot) {
                 textResult.append(".")
                 lastDot = true
                 lastNumeric = false
-
+                doubleDot = true
             }
         }
 
@@ -94,6 +94,7 @@ class MainActivity : AppCompatActivity() {
                 textResult.append("/")
                 lastNumeric = false
                 lastDot = false
+                doubleDot = false
             }
         }
 
@@ -102,6 +103,7 @@ class MainActivity : AppCompatActivity() {
                 textResult.append("*")
                 lastNumeric = false
                 lastDot = false
+                doubleDot = false
             }
         }
 
@@ -110,10 +112,11 @@ class MainActivity : AppCompatActivity() {
                 textResult.append("-")
                 lastNumeric = false
                 lastDot = false
-            } else if (textResult.text.isNotEmpty() && textResult.text.last() != '-') {
+            } else if (textResult.text.isNotEmpty() && textResult.text.last() != '-' && textResult.text.last() != '.') {
                 textResult.append("-")
                 lastNumeric = false
                 lastDot = false
+                doubleDot = false
             }
 
         }
@@ -123,6 +126,7 @@ class MainActivity : AppCompatActivity() {
                 textResult.append("+")
                 lastNumeric = false
                 lastDot = false
+                doubleDot = false
             }
         }
 
@@ -190,8 +194,8 @@ class MainActivity : AppCompatActivity() {
         }
         buttonClear.setOnClickListener {
             textResult.text = ""
+            doubleDot = false
         }
-
 
     }
 
