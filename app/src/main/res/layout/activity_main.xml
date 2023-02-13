@@ -25,7 +25,6 @@
             android:layout_weight="1"
             android:gravity="bottom|right"
             android:padding="10dp"
-            android:text="TextView"
             android:textColor="@color/result_color"
             android:textSize="34sp"
             android:textStyle="bold" />
@@ -52,7 +51,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number7"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
@@ -64,7 +63,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number8"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
@@ -76,7 +75,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number9"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <Button
@@ -88,7 +87,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/result_color"
             android:text="@string/divide"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -112,7 +111,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number6"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="5dp"
             tools:layout_editor_absoluteY="313dp" />
@@ -126,7 +125,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number5"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="108dp"
             tools:layout_editor_absoluteY="313dp" />
@@ -140,7 +139,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number4"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="211dp"
             tools:layout_editor_absoluteY="313dp" />
@@ -154,7 +153,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/result_color"
             android:text="@string/multiply"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="314dp"
             tools:layout_editor_absoluteY="313dp" />
@@ -180,7 +179,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number3"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="351dp" />
@@ -194,7 +193,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number2"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="114dp"
             tools:layout_editor_absoluteY="351dp" />
@@ -208,7 +207,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number1"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="214dp"
             tools:layout_editor_absoluteY="351dp" />
@@ -222,7 +221,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/result_color"
             android:text="@string/minus"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="315dp"
             tools:layout_editor_absoluteY="351dp" />
@@ -240,14 +239,14 @@
 
         <Button
             android:id="@+id/button0"
-            android:layout_width="170dp"
+            android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:backgroundTint="@color/button_color"
             android:text="@string/number0"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="443dp" />
@@ -261,9 +260,23 @@
             android:layout_weight="1"
             android:backgroundTint="@color/button_clear"
             android:text="@string/clear"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="148dp"
+            tools:layout_editor_absoluteY="443dp" />
+
+        <Button
+            android:id="@+id/buttonDot"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/result_color"
+            android:text="@string/dot"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="443dp" />
 
         <Button
@@ -275,7 +288,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/result_color"
             android:text="@string/plus"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="281dp"
             tools:layout_editor_absoluteY="443dp" />
