@@ -25,10 +25,10 @@ class MainActivity : AppCompatActivity() {
         buttonsClick()
 
 
+
     }
 
-
-    private fun buttonsClick() = with(binding) {
+    fun buttonsClick() = with(binding) {
         button0.setOnClickListener {
             textResult.append("0")
             lastNumeric = true
@@ -131,22 +131,55 @@ class MainActivity : AppCompatActivity() {
                 var tvValue = textResult.text.toString()
                 var prefix = ""
                 try {
-                    if (tvValue.startsWith("-")){
+                    if (tvValue.startsWith("-")) {
                         prefix = "-"
                         tvValue = tvValue.substring(1)
                     }
 
-                    if (tvValue.contains("-")){
+                    if (tvValue.contains("-")) {
                         val splitValue = tvValue.split("-")
 
                         var one = splitValue[0]
                         var two = splitValue[1]
 
-                        if (prefix.isNotEmpty()){
+                        if (prefix.isNotEmpty()) {
                             one = prefix + one
                         }
 
                         textResult.text = (one.toDouble() - two.toDouble()).toString()
+                    } else if (tvValue.contains("+")) {
+                        val splitValue = tvValue.split("+")
+
+                        var one = splitValue[0]
+                        var two = splitValue[1]
+
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        textResult.text = (one.toDouble() + two.toDouble()).toString()
+                    } else if (tvValue.contains("/")) {
+                        val splitValue = tvValue.split("/")
+
+                        var one = splitValue[0]
+                        var two = splitValue[1]
+
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        textResult.text = (one.toDouble() / two.toDouble()).toString()
+                    } else if (tvValue.contains("*")) {
+                        val splitValue = tvValue.split("*")
+
+                        var one = splitValue[0]
+                        var two = splitValue[1]
+
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+
+                        textResult.text = (one.toDouble() * two.toDouble()).toString()
                     }
 
 
@@ -158,6 +191,8 @@ class MainActivity : AppCompatActivity() {
         buttonClear.setOnClickListener {
             textResult.text = ""
         }
+
+
     }
 
 }
