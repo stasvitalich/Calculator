@@ -218,5 +218,7 @@ class MainActivity : AppCompatActivity() {
 
 }
 
+// TODO: It is necessary to deal with bugs and block unacceptable user behavior.
+
 
 
