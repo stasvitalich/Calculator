@@ -15,70 +15,85 @@ class MainActivity : AppCompatActivity() {
     var lastDot = false
     val symbols = Regex("[/*+]")
     var doubleDot = false
+    var doubleZero = false
+    var action = false
+    var permissionForZeros = false
 
     override fun onCreate(s: Bundle?) {
         super.onCreate(s)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
         buttonsClick()
-
-
     }
 
     fun buttonsClick() = with(binding) {
         button0.setOnClickListener {
-            textResult.append("0")
+
+            if (textResult.text.isEmpty() && action == false){
+                textResult.append("0")
+            }
+            if (lastDot == true || permissionForZeros == true){
+                textResult.append("0")
+            }
+
             lastNumeric = true
             lastDot = false
         }
         button1.setOnClickListener {
+
+            permissionForZeros = true
             textResult.append("1")
             lastNumeric = true
             lastDot = false
         }
         button2.setOnClickListener {
+            permissionForZeros = true
             textResult.append("2")
             lastNumeric = true
             lastDot = false
         }
         button3.setOnClickListener {
+            permissionForZeros = true
             textResult.append("3")
             lastNumeric = true
             lastDot = false
         }
         button4.setOnClickListener {
+            permissionForZeros = true
             textResult.append("4")
             lastNumeric = true
             lastDot = false
         }
         button5.setOnClickListener {
+            permissionForZeros = true
             textResult.append("5")
             lastNumeric = true
             lastDot = false
         }
         button6.setOnClickListener {
+            permissionForZeros = true
             textResult.append("6")
             lastNumeric = true
             lastDot = false
         }
         button7.setOnClickListener {
+            permissionForZeros = true
             textResult.append("7")
             lastNumeric = true
             lastDot = false
         }
         button8.setOnClickListener {
+            permissionForZeros = true
             textResult.append("8")
             lastNumeric = true
             lastDot = false
         }
         button9.setOnClickListener {
+            permissionForZeros = true
             textResult.append("9")
             lastNumeric = true
             lastDot = false
         }
-
 
         buttonDot.setOnClickListener {
             if (lastNumeric && !lastDot && textResult.text.isNotEmpty() && !doubleDot) {
@@ -86,6 +101,7 @@ class MainActivity : AppCompatActivity() {
                 lastDot = true
                 lastNumeric = false
                 doubleDot = true
+                permissionForZeros = true
             }
         }
 
@@ -108,6 +124,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonMinus.setOnClickListener {
+
             if (textResult.text.isEmpty()) {
                 textResult.append("-")
                 lastNumeric = false
@@ -118,7 +135,6 @@ class MainActivity : AppCompatActivity() {
                 lastDot = false
                 doubleDot = false
             }
-
         }
 
         buttonPlus.setOnClickListener {
@@ -186,7 +202,6 @@ class MainActivity : AppCompatActivity() {
                         textResult.text = (one.toDouble() * two.toDouble()).toString()
                     }
 
-
                 } catch (e: ArithmeticException) {
                     e.printStackTrace()
                 }
@@ -195,6 +210,8 @@ class MainActivity : AppCompatActivity() {
         buttonClear.setOnClickListener {
             textResult.text = ""
             doubleDot = false
+            permissionForZeros = false
+
         }
 
     }
